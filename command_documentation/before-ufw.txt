@@ -1,0 +1,8 @@
+# UFW Status Before Hardening
+# Generated: $(date)
+
+Status: inactive
+
+# No rules configured
+# Default policies: allow (incoming), allow (outgoing), disabled (routed)
+# Logging: off
