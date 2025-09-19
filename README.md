@@ -1,4 +1,4 @@
-# Task 4: Linux Server Hardening
+# Linux Server Hardening
 
 ![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange)
 ![Security](https://img.shields.io/badge/Security-Hardening-red)
