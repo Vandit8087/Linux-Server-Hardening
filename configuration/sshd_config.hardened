@@ -1,0 +1,75 @@
+# Hardened SSH Configuration
+# Linux Server Hardening Project - Task 4
+# Generated on: $(date)
+# 
+# SECURITY NOTICE: This configuration implements security hardening measures
+# including disabled root login, key-based authentication, and custom port
+
+# Network Settings
+Port 2022
+Protocol 2
+AddressFamily inet
+ListenAddress 0.0.0.0
+
+# Host Keys
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Ciphers and Algorithms (Strong crypto only)
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-512
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+# Authentication Settings (HARDENED)
+LoginGraceTime 30
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 3
+MaxSessions 2
+
+# Key-based Authentication (ENFORCED)
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Disable Password Authentication (SECURITY)
+PasswordAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+
+# Disable unused authentication methods
+KerberosAuthentication no
+GSSAPIAuthentication no
+
+# User Access Control
+AllowUsers secadmin
+DenyUsers root guest daemon nobody
+
+# Connection Management
+ClientAliveInterval 300
+ClientAliveCountMax 2
+TCPKeepAlive yes
+MaxStartups 3:50:10
+
+# Disable risky features
+X11Forwarding no
+AllowTcpForwarding no
+PermitTunnel no
+PermitUserEnvironment no
+GatewayPorts no
+
+# PAM and system integration
+UsePAM yes
+UseDNS no
+PrintMotd yes
+PrintLastLog yes
+
+# SFTP Configuration (if needed)
+# Subsystem sftp /usr/lib/openssh/sftp-server -l INFO
+
+# Banner (optional)
+# Banner /etc/ssh/banner.txt

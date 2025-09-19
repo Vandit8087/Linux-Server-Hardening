@@ -1,0 +1,12 @@
+# UFW Status After Hardening  
+# Generated: $(date)
+
+Status: active
+
+To                         Action      From
+--                         ------      ----
+2022/tcp (SSH Custom Port) ALLOW IN    Anywhere                  
+2022/tcp (SSH Custom Port (v6)) ALLOW IN    Anywhere (v6)             
+
+Default: deny (incoming), allow (outgoing), disabled (routed)
+Logging: on (low)
