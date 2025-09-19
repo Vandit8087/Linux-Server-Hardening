@@ -137,12 +137,12 @@ Feel free to fork this repository and submit pull requests for improvements. Ple
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙋‍♂️ Contact
+## 📧 Contact Information
 
-**Author**: [Your Name]  
-**Institution**: [Your Institution]  
-**Course**: Cybersecurity & Penetration Testing  
-**Project**: Task 4 - Linux Server Hardening  
+**Author**: Vandit Naman Shah
+
+**Focus Areas**: Network Security, Quantum Cryptography, CyberSecurity, GRC
+
 
 ---
 
